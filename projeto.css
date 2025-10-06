@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(to left, 
+                                rgb(255, 255, 255) 10%,     
+                                rgb(60, 170, 239) 100%);        
+    height: 100vh;
+    margin: 0;}   
+h3{
+    background: linear-gradient(to right);
+}
+
+ .container-textos {
+    display: flex; /* Transforma o contêiner em um contêiner flexbox */
+    width: 80%; /* Define uma largura para o contêiner principal */
+    max-width: 1200px; /* Limita a largura máxima para não esticar muito */
+    background-color: white; /* Fundo branco para o contêiner dos textos */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    overflow: hidden; /* Garante que nada transborde */
+}
+
+.texto-esquerda,
+.texto-direita {
+    flex: 1; /* Faz com que cada div ocupe uma parte igual do espaço disponível */
+    padding: 30px; /* Espaçamento interno para o texto */
+    box-sizing: border-box; /* Inclui padding e border na largura/altura total */
+}
+
+/* Opcional: Adicionar uma linha divisória visualmente */
+.texto-esquerda {
+    border-right: 1px solid #e51616; /* Linha sutil à direita do texto esquerdo */
+}
