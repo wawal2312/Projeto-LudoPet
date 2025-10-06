@@ -1,0 +1,14 @@
+
+.container-A {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.item-A {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px; 
+}
