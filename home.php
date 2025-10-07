@@ -2,7 +2,8 @@
 session_start();
 include("header.php");
 include("home.php");
-include()
+include("css2.css");
+include("footer.php");
 ?>
 
 <!DOCTYPE html>
