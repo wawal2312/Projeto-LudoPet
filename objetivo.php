@@ -35,7 +35,7 @@
     </div>
 
     <div class="col-md-2 mb-3">
-      <img src="img/protecao_animal.png" alt="Proteção Animal" style="width:80px">
+      <img src="img/img.proteção.png" alt="Proteção Animal" style="width:80px">
       <h5>Proteção Animal</h5>
       <p>Promovemos o bem-estar e segurança dos animais.</p>
     </div>
