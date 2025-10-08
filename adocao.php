@@ -1,39 +1,9 @@
 <?php
-include 'config.php';
-
-$sql = "SELECT * FROM doacoes WHERE status='disponivel'";
-$result = $conn->query($sql);
+include('config.php');
+include('header.php'); // Inclui o menu principal
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Adoção - Ludo Pet</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    body {
-      background: linear-gradient(to right, #ffffff, #b2e6ff);
-    }
-    .animal-card {
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      margin-bottom: 20px;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-    .animal-card:hover {
-      transform: scale(1.02);
-    }
-    img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-  </style>
-</head>
-<body class="container py-5">
+<div class="container py-5">
 
   <h1 class="text-center mb-5">🐾 Animais Disponíveis para Adoção 🐾</h1>
 
@@ -42,11 +12,15 @@ $result = $conn->query($sql);
   </div>
 
   <div class="row">
-    <?php if ($result->num_rows > 0): ?>
-      <?php while ($row = $result->fetch_assoc()): ?>
+    <?php
+    $sql = "SELECT * FROM doacoes WHERE status='disponivel'";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0):
+      while ($row = $result->fetch_assoc()): ?>
         <div class="col-md-4">
-          <div class="card animal-card">
-            <img src="<?= htmlspecialchars($row['foto']) ?>" alt="<?= htmlspecialchars($row['nome']) ?>">
+          <div class="card animal-card shadow-sm">
+            <img src="<?= htmlspecialchars($row['foto']) ?>" alt="<?= htmlspecialchars($row['nome']) ?>" class="card-img-top">
             <div class="card-body">
               <h4 class="card-title"><?= htmlspecialchars($row['nome']) ?></h4>
               <p><strong>Espécie:</strong> <?= htmlspecialchars($row['especie']) ?></p>
@@ -61,53 +35,74 @@ $result = $conn->query($sql);
             </div>
           </div>
         </div>
-      <?php endwhile; ?>
-    <?php else: ?>
+      <?php endwhile;
+    else: ?>
       <p class="text-center">Nenhum animal disponível no momento 😿.</p>
     <?php endif; ?>
   </div>
+</div>
 
-  <!-- Modal de Adoção -->
-  <div class="modal fade" id="adotarModal" tabindex="-1" aria-labelledby="adotarModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="processa_adocao.php" method="POST">
-          <div class="modal-header">
-            <h5 class="modal-title" id="adotarModalLabel">Formulário de Adoção</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Modal de Adoção -->
+<div class="modal fade" id="adotarModal" tabindex="-1" aria-labelledby="adotarModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="processa_adocao.php" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adotarModalLabel">Formulário de Adoção</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="animal" id="animalNomeInput">
+          <div class="mb-3">
+            <label>Seu nome:</label>
+            <input type="text" name="nome" class="form-control" required>
           </div>
-          <div class="modal-body">
-            <input type="hidden" name="animal" id="animalNomeInput">
-            <div class="mb-3">
-              <label>Seu nome:</label>
-              <input type="text" name="nome" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label>Email:</label>
-              <input type="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label>Mensagem (opcional):</label>
-              <textarea name="mensagem" class="form-control"></textarea>
-            </div>
+          <div class="mb-3">
+            <label>Email:</label>
+            <input type="email" name="email" class="form-control" required>
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-success">Enviar Pedido</button>
+          <div class="mb-3">
+            <label>Mensagem (opcional):</label>
+            <textarea name="mensagem" class="form-control"></textarea>
           </div>
-        </form>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Enviar Pedido</button>
+        </div>
+      </form>
     </div>
   </div>
+</div>
 
-  <script>
-    const modal = document.getElementById('adotarModal');
-    modal.addEventListener('show.bs.modal', event => {
-      const button = event.relatedTarget;
-      const nomeAnimal = button.getAttribute('data-nome');
-      modal.querySelector('#adotarModalLabel').textContent = `Adotar ${nomeAnimal}`;
-      modal.querySelector('#animalNomeInput').value = nomeAnimal;
-    });
-  </script>
+<style>
+body {
+  background: linear-gradient(to right, #ffffff, #b2e6ff);
+}
+.animal-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.animal-card:hover {
+  transform: scale(1.02);
+}
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+</style>
 
-</body>
-</html>
+<script>
+  const modal = document.getElementById('adotarModal');
+  modal.addEventListener('show.bs.modal', event => {
+    const button = event.relatedTarget;
+    const nomeAnimal = button.getAttribute('data-nome');
+    modal.querySelector('#adotarModalLabel').textContent = `Adotar ${nomeAnimal}`;
+    modal.querySelector('#animalNomeInput').value = nomeAnimal;
+  });
+</script>
+
+<?php include('footer.php'); ?>
