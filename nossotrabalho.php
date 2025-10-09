@@ -4,38 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ludo Pet - Nosso Trabalho</title>
-  <link rel="stylesheet" href="projeto.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to right, #ffffff, #b2e6ff);
-      font-family: Arial, sans-serif;
-      padding: 30px;
+      background-color: #b2ffb2;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2d3436;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 40px;
+      margin: 40px 0;
+      font-size: 2.5rem;
+      color: #1b4332;
+      font-weight: bold;
     }
-    .work-section {
+
+    .work-container {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: center;
-      gap: 30px;
+      align-items: center;
+      gap: 40px;
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
     }
+
     .work-text {
-      max-width: 600px;
-      line-height: 1.6;
+      flex: 1 1 400px;
+      font-size: 1.1rem;
+      line-height: 1.7;
     }
+
     .work-text p {
       margin-bottom: 15px;
-      font-size: 1.1rem;
     }
+
+    .work-text strong {
+      color: #2d6a4f;
+    }
+
     .work-image img {
-      max-width: 400px;
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px; /* tamanho médio */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      color: #1b4332;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -43,22 +67,39 @@
 
   <h1>Nosso Trabalho 🐕</h1>
 
-  <div class="work-section">
+  <div class="work-container">
     <div class="work-text">
-      <p>Nosso trabalho é conectar pessoas e pets de forma responsável e segura.</p>
-      
-      <p>💚 <strong>Cadastro de animais:</strong> resgatados ou disponíveis para adoção.</p>
-      <p>📷 <strong>Divulgação:</strong> fotos e informações de cada pet.</p>
-      <p>🤝 <strong>Conexão:</strong> entre adotantes e doadores.</p>
-      <p>📚 <strong>Educação:</strong> promovemos informações sobre adoção responsável, vacinação e cuidados.</p>
-      
-      <p>Acreditamos que juntos podemos reduzir o abandono e espalhar amor por meio da adoção. 🐾</p>
+      <p>
+        No <strong>Ludo Pet</strong>, trabalhamos para criar uma ponte entre pessoas e animais que merecem um novo lar. 
+        Nosso foco é garantir que cada adoção seja feita com responsabilidade, carinho e segurança.
+      </p>
+
+      <p>
+        Através da tecnologia, damos visibilidade a animais resgatados e promovemos conexões reais entre adotantes, 
+        doadores e protetores. 💚
+      </p>
+
+      <p>
+        Nosso propósito é simples: transformar vidas, humanas e animais, com amor e empatia. 🐾
+      </p>
     </div>
 
     <div class="work-image">
-      <img src="img/lari.jpg" alt="Nosso Trabalho LudoPet">
-    </div>
+  <img src="img/logo1.png" alt="Nosso Trabalho LudoPet" class="logo-ludo">
+</div>
+
+<style>
+  .logo-ludo {
+    width: 100px;
+    height: auto;
+  }
+</style>
+
   </div>
+
+  <footer>
+    Juntos espalhamos amor e damos novas chances aos nossos amigos de quatro patas. 💕
+  </footer>
 
 </body>
 </html>
