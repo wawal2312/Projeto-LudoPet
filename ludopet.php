@@ -90,7 +90,7 @@ echo "Sobre o Ludo Pet";
 
   <div class="container-sobre">
     <div class="banner">
-      <img src="img/banner-ludopet.jpg" alt="Banner do Ludo Pet">
+      <img src="img/logo2.png" alt="Banner do Ludo Pet">
     </div>
 
     <h1>🐶 Sobre o Ludo Pet</h1>
