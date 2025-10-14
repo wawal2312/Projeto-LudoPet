@@ -1,0 +1,234 @@
+/* === ESTILO GERAL === */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* === CABEÇALHO === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e4e2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header .logo span {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #7fd6ff; /* azul claro */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+nav ul li a:hover {
+  color: #7fd6ff; /* azul claro */
+}
+
+/* === SEÇÃO HERO === */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #d6f3ff; /* azul claro bem suave */
+  border-bottom: 3px solid #b3e6ff; /* azul claro */
+}
+
+.hero img {
+  max-width: 450px;
+  width: 100%;
+}
+
+.hero p {
+  max-width: 800px;
+  margin: 10px auto 0;
+  color: #444;
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+/* === SEÇÃO DE ANIMAIS === */
+.section-animais {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.section-animais h2 {
+  font-size: 1.9em;
+  color: #7fd6ff; /* azul claro */
+  margin-bottom: 35px;
+}
+
+/* === GRID DE CARDS === */
+.animais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 0 40px;
+}
+
+/* === CARD === */
+.card {
+  background-color: #e0f6ff; /* azul claro */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 210px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 12px 0 8px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.card button {
+  background-color: #ffffff;
+  border: 2px solid #7fd6ff; /* azul claro */
+  color: #333;
+  border-radius: 12px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background-color: #7fd6ff; /* azul claro */
+  color: #fff;
+}
+
+/* === RODAPÉ PADRÃO === */
+footer {
+  background: #fff;
+  border-top: 1px solid #e0e4e2;
+  padding: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+footer a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #7fd6ff; /* azul claro */
+}
+
+footer a i {
+  font-size: 1.4em;
+  margin-bottom: 4px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .animais-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+
+  footer a {
+    font-size: 0.8em;
+  }
+
+  footer a i {
+    font-size: 1.2em;
+  }
+}
+
+.duas-cores {
+  background: #7fd6ff; /* azul claro */
+  min-height: 500px;
+  width: 100%;
+}
+
+/* === Cards */
+section.container.mt-5 {
+  margin-bottom: 80px;
+}
+
+section.duas-cores {
+  background: #7fd6ff; /* azul claro */
+  min-height: 500px;
+  width: 100%;
+}
+
+section.duas-cores .container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+section.duas-cores h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+section.duas-cores p {
+  color: #f0f0f0;
+  line-height: 1.6;
+}
